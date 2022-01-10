@@ -43,7 +43,7 @@ if(process.env.NODE_ENV === 'production'){
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "snifferDog.com"],
+    origin: ["http://localhost:3000", "snifferDog.com", "http://13.124.119.194"],
     credentials: true,
   })
 );
