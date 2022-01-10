@@ -5,8 +5,10 @@ const cookieParser = require('cookie-parser');
 
 const dotenv = require("dotenv");
 const passport = require("passport");
-const morgan = require("morgan");
 const db = require("../back/models");
+const morgan = require("morgan");
+const hpp = require("hpp");
+const helmet = require("helmet");
 
 const perfumesRouter = require("./routes/perfumes");
 const perfumeRouter = require("./routes/perfume");
@@ -30,11 +32,18 @@ db.sequelize
 
 passportConfig();
 
-app.use(morgan("dev"));
+if(process.env.NODE_ENV === 'production'){
+  app.use(morgan('combined'));
+  app.use(hpp());
+  app.use(helmet());
+} else {
+  app.use(morgan("dev"));
+}
+
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "snifferDog.com"],
     credentials: true,
   })
 );
