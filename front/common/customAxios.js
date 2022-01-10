@@ -1,4 +1,5 @@
 import axios from "axios";
+import { backUrl } from "../config/config";
 
 const axiosInstance = axios.create({
     // // baseURL: process.env.NEXT_PUBLIC_DOMAIN,
@@ -7,7 +8,7 @@ const axiosInstance = axios.create({
     //     'Accept': '*/*',
     // }
 });
-axiosInstance.defaults.baseURL=process.env.NEXT_PUBLIC_DOMAIN;
+axiosInstance.defaults.baseURL=backUrl;
 axiosInstance.defaults.withCredentials = true;
 
 
