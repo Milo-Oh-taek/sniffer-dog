@@ -43,7 +43,7 @@ if(process.env.NODE_ENV === 'production'){
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "snifferDog.com", "http://13.124.119.194"],
+    origin: ["http://localhost:3000", "snifferdog.site"],
     credentials: true,
   })
 );
@@ -57,7 +57,11 @@ app.use(
     saveUninitialized: false,
     resave: false,
     secret: process.env.SESSION_SECRET,
-    cookie: { httpOnly: false},
+    cookie: { 
+      httpOnly: true,
+      secure: false,
+      domain: process.env.NODE_ENV === 'production' && '.snifferdog.site'
+    },
   })
 );
 
