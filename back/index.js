@@ -63,7 +63,7 @@ app.use(
     secret: process.env.SESSION_SECRET,
     cookie: { 
       httpOnly: true,
-      secure: false,
+      secure: true,
       domain: process.env.NODE_ENV === 'production' && '.snifferdog.site'
     },
   })
