@@ -6,7 +6,9 @@ import reducer from './modules';
 
 const store = (context) => configureStore({
     reducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+    middleware: process.env.NODE_ENV !== 'production'? 
+                (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
+                : (getDefaultMiddleware) => getDefaultMiddleware(),
     devTools: process.env.NODE_ENV !== 'production',
   });
   
