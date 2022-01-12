@@ -50,7 +50,7 @@ const Filter = () => {
 	},[pageState, /*keywordState*/])
 
 	useEffect(() => {
-		const token = cookies.get(process.env.NEXT_PUBLIC_COOKIE_NAME)? cookies.get(cookieName) : "";
+		const token = cookies.get(cookieName)? cookies.get(cookieName) : "";
 
 		axiosInstance.defaults.headers.Cookie = "";
 		if(token){
