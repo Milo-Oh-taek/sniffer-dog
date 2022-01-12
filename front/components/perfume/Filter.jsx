@@ -13,6 +13,7 @@ import Cookies from "universal-cookie";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import styles from "./Filter.module.css";
+import { cookieName } from "../../config/config";
 
 const Filter = () => {
 	const dispatch = useDispatch();
@@ -49,7 +50,7 @@ const Filter = () => {
 	},[pageState, /*keywordState*/])
 
 	useEffect(() => {
-		const token = cookies.get(process.env.NEXT_PUBLIC_COOKIE_NAME)? cookies.get(process.env.NEXT_PUBLIC_COOKIE_NAME) : "";
+		const token = cookies.get(process.env.NEXT_PUBLIC_COOKIE_NAME)? cookies.get(cookieName) : "";
 
 		axiosInstance.defaults.headers.Cookie = "";
 		if(token){
