@@ -83,7 +83,7 @@ app.use("/user", userRouter);
 app.use("/posts", postsRouter);
 
 app.get("/", (req, res) => {
-  res.send("Hello World3333");
+  res.send("Hello World");
 });
 
 app.listen(3065, () => console.log("server is working"));

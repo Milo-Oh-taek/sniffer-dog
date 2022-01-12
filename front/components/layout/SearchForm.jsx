@@ -18,6 +18,13 @@ const SearchForm = () => {
 		});
 	};
 
+	const resetHandler = () => {
+		keywordRef.current.value = null;
+		router.push({
+			pathname: '/perfume',
+		});
+	}
+
 	return (
 		<form onSubmit={searchHandler}>
 			<InputGroup className="mb-3">
@@ -27,11 +34,17 @@ const SearchForm = () => {
 					ref={keywordRef}
 				/>
 				<Button
-					variant="outline-secondary"
-					id="button-addon2"
+					variant="dark"
 					type="submit"
 				>
 					Sniff!
+				</Button>
+				<Button
+					variant="secondary"
+					type="button"
+					onClick={resetHandler}
+				>
+					Reset!
 				</Button>
 			</InputGroup>
 		</form>

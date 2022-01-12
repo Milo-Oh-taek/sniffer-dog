@@ -4,12 +4,14 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Spinner from "react-bootstrap/Spinner";
 import Paginator from "./Paginator";
-import Router from "next/router";
+import { useRouter } from 'next/router';
 
 const CardList = ({perfumeList,perfumeListLoading,perfumeCount}) => {
+	const router = useRouter();
+	const { keyword } = router.query;
 
 	const goDetail = (id) => {
-		Router.push(`/perfume/${id}`);
+		router.push(`/perfume/${id}`);
 	};
 
 	return (
@@ -45,7 +47,10 @@ const CardList = ({perfumeList,perfumeListLoading,perfumeCount}) => {
 					className="g-4"
 					style={{ width: "100%", textAlign: "center" }}
 				>
+					
 					<div style={{ width: "100%" }}>
+						{keyword && <h2>Search Lists of &apos;{keyword}&apos; </h2>}
+						
 						<h4>({perfumeCount ? perfumeCount : "0"})</h4>
 					</div>
 

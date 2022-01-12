@@ -20,10 +20,14 @@ router.get('/', async (req, res) => {
         if(keyword){
             where.name = { [Op.like]: '%'+keyword+'%' };
         }
-        if(brand && brand.length > 0){
+        if(brand && brand.length === 1){
+            where.brand_id = brand;
+        } else if(brand && brand.length > 1){
             where.brand_id = { [Op.or]: brand };
         }
-        if(gender && gender.length > 0){
+        if(gender && gender.length === 1){
+            where.sex = gender;
+        } else if(gender && gender.length > 1){
             where.sex = { [Op.or]: gender };
         }
 
