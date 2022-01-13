@@ -124,22 +124,26 @@ const PerfumeInfo = () => {
 					<Card style={{ textAlign: "center" }}>
 						<Card.Header>Notes</Card.Header>
 						<ListGroup variant="flush">
-							<ListGroup.Item>
-								Top:{" "}
-								{perfumeInfo.topNote.map((note) => (
-									<Badge key="index" bg="secondary">
-										{note}
-									</Badge>
-								))}
-							</ListGroup.Item>
-							<ListGroup.Item>
-								Middle:{" "}
-								{perfumeInfo.middleNote.map((note) => (
-									<Badge key="index" bg="secondary">
-										{note}
-									</Badge>
-								))}
-							</ListGroup.Item>
+							{perfumeInfo.topNote && (
+								<ListGroup.Item>
+									Top:{" "}
+									{perfumeInfo.topNote.map((note) => (
+										<Badge key="index" bg="secondary">
+											{note}
+										</Badge>
+									))}
+								</ListGroup.Item>
+							)}
+							{perfumeInfo.middleNote && (
+								<ListGroup.Item>
+									Middle:{" "}
+									{perfumeInfo.middleNote.map((note) => (
+										<Badge key="index" bg="secondary">
+											{note}
+										</Badge>
+									))}
+								</ListGroup.Item>
+							)}
 							<ListGroup.Item>
 								Base:{" "}
 								{perfumeInfo.baseNote.map((note) => (
