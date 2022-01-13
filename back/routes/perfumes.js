@@ -20,15 +20,19 @@ router.get('/', async (req, res) => {
         if(keyword){
             where.name = { [Op.like]: '%'+keyword+'%' };
         }
-        if(brand && brand.length === 1){
-            where.brand_id = brand;
-        } else if(brand && brand.length > 1){
-            where.brand_id = { [Op.or]: brand };
+        if(brand){
+            if(typeof brand === 'string'){
+                where.brand_id = brand;
+            } else {
+                where.brand_id = { [Op.or]: brand };
+            }
         }
-        if(gender && gender.length === 1){
-            where.sex = gender;
-        } else if(gender && gender.length > 1){
-            where.sex = { [Op.or]: gender };
+        if(gender){
+            if(typeof gender === 'string'){
+                where.sex = gender;
+            } else {
+                where.sex = { [Op.or]: gender };
+            }
         }
 
         const perfumes = await Perfume.findAndCountAll({

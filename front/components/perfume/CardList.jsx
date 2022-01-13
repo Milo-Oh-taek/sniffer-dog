@@ -51,8 +51,12 @@ const CardList = ({perfumeList,perfumeListLoading,perfumeCount}) => {
 					<div style={{ width: "100%" }}>
 						{keyword && <h2>Search Lists of &apos;{keyword}&apos; </h2>}
 						
-						<h4>({perfumeCount ? perfumeCount : "0"})</h4>
+						<h4>({perfumeCount})</h4>
+						{!perfumeCount && (
+							<h3 style={{marginTop:'40%'}}>- No Results -</h3>
+						)}
 					</div>
+					
 
 					{perfumeList?.map((item) => (
 						<Col key={item.id}>
@@ -75,8 +79,7 @@ const CardList = ({perfumeList,perfumeListLoading,perfumeCount}) => {
 							</Card>
 						</Col>
 					))}
-
-					<Paginator />
+					{perfumeCount? <Paginator />: null}
 				</Row>
 			)}
 		</>
