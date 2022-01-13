@@ -6,7 +6,15 @@ export const getPerfumeList = createAsyncThunk(
 	"perfume/getList",
 	async (data, thunkAPI) => {
 		try {
-			const res = await axiosInstance("/perfumes", { params: data });
+            const datas = data;
+            if(typeof datas.brand === 'object'){
+                datas.brand = datas.brand.join();
+            }
+            if(typeof datas.gender === 'object'){
+                datas.gender = datas.gender.join();
+            }
+            
+			const res = await axiosInstance("/perfumes", { params: datas });
 			return res.data;
 		} catch (err) {
 			console.log(err);
