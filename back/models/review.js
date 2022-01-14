@@ -52,14 +52,14 @@ module.exports = class Review extends Model {
           allowNull: false,
           defaultValue: "Y",
         },
-        // userId: {
-        //   type: DataTypes.INTEGER,
-        //   allowNull: false,
-        // },
-        // perfumeId: {
-        //   type: DataTypes.INTEGER,
-        //   allowNull: false,
-        // },
+        userId: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+        },
+        perfumeId: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+        },
       },
       {
         sequelize,

@@ -41,23 +41,23 @@ export const getReviewStats = createAsyncThunk(
 				RadarData: [
 					{
 						item: "longevity",
-						avg: Math.round(avgInfo.longevityAVG),
+						avg: Math.round(avgInfo.longevityAVG) *10,
 					},
 					{
 						item: "sillage",
-						avg: Math.round(avgInfo.sillageAVG),
+						avg: Math.round(avgInfo.sillageAVG) *10,
 					},
 					{
 						item: "male",
-						avg: Math.round(avgInfo.maleAVG),
+						avg: Math.round(avgInfo.maleAVG) *10,
 					},
 					{
 						item: "female",
-						avg: Math.round(avgInfo.femaleAVG),
+						avg: Math.round(avgInfo.femaleAVG) *10,
 					},
 					{
 						item: "value",
-						avg: Math.round(avgInfo.valueAVG),
+						avg: Math.round(avgInfo.valueAVG) *10,
 					},
 				],
 				overall: Math.round(avgInfo.overallAVG),
