@@ -103,7 +103,7 @@ const Mypage = () => {
 							navClickHandler("feed");
 						}}
 					>
-						Feed List
+						Forum List
 					</Nav.Link>
 				</Nav.Item>
 				<Nav.Item>

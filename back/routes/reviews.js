@@ -123,8 +123,8 @@ router.get("/user/:userId", async (req, res) => {
       where:{ 'user_id': userId},
       attributes: [
                     "id","title","content", "created_at", "overall",
-                    [literal(`(SELECT COUNT(*) FROM user_review_like join reviews ON user_review_like.review_id = review.id)`), 'like_count'],
-                    [literal(`(SELECT COUNT(*) FROM user_review_dislike join reviews ON user_review_dislike.review_id = review.id)`), 'dislike_count'],
+                    [literal(`(SELECT COUNT(*) FROM user_review_like join reviews ON user_review_like.review_id = reviews.id)`), 'like_count'],
+                    [literal(`(SELECT COUNT(*) FROM user_review_dislike join reviews ON user_review_dislike.review_id = reviews.id)`), 'dislike_count'],
                   ],
       include: [
         {

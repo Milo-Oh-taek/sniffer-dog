@@ -36,7 +36,7 @@ const LogoNav = () => {
 	return (
 		<Navbar expand="sm" bg="dark" variant="dark">
 			<Container style={{ justifyContent: "start" }}>
-				<Navbar.Brand style={{ fontSize: "1rem" }}>admin</Navbar.Brand>
+				{/* <Navbar.Brand style={{ fontSize: "1rem" }}>admin</Navbar.Brand> */}
 			</Container>
 			<Container style={{ justifyContent: "center" }}>
 				<Navbar.Brand style={{ fontSize: "3rem" }}>SNIFFER DOG</Navbar.Brand>

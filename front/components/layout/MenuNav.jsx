@@ -12,13 +12,13 @@ const MenuNav = () => {
                             <a className="nav-link active" aria-current="page">Home</a>
                         </Link>
                         <Link href="/perfume">
-                            <a className="nav-link" href="#">perfume</a>
+                            <a className="nav-link" href="#">Perfume</a>
                         </Link>
                         <Link href="/feed">
-                            <a className="nav-link" href="#">feed</a>
+                            <a className="nav-link" href="#">Forum</a>
                         </Link>
                         <Link href="/mypage">
-                            <a className="nav-link" href="#">mypage</a>
+                            <a className="nav-link" href="#">Mypage</a>
                         </Link>
                     </div>
                 </div>
