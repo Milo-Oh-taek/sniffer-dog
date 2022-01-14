@@ -27,17 +27,4 @@ module.exports = class userReviewLike extends Model {
       }
     );
   }
-  static associate(db) {
-    // db.UserReviewLike.belongsToMany(db.User, {
-    //   through: 'user_review_like', foreignKey: 'user_id'
-    // });
-    // db.UserReviewLike.belongsToMany(db.Review, {
-    //   through: 'user_review_like', foreignKey: 'review_id'
-    // });
-    // db.UserReviewLike.belongsToMany(db.User, {through: 'user_review'});
-    // db.UserReviewLike.belongsTo(db.User);
-    // db.UserReviewLike.belongsTo(db.Review);\
-    // db.UserReviewLike.belongsToMany(db.User, {through:'userReviewLike'});
-
-  }
 };

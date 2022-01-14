@@ -92,11 +92,6 @@ router.get("/:id", async (req, res) => {
       where,
       limit,
       order,
-      attributes: [
-                    "id","title","content", "created_at", "overall",
-                    [literal(`(SELECT COUNT(*) FROM user_review_like join reviews ON user_review_like.review_id = reviews.id)`), 'like_count'],
-                    [literal(`(SELECT COUNT(*) FROM user_review_dislike join reviews ON user_review_dislike.review_id = reviews.id)`), 'dislike_count'],
-                  ],
       include: [
         {
           model: Perfume,
@@ -121,11 +116,6 @@ router.get("/user/:userId", async (req, res) => {
 
     const reviewList = await Review.findAndCountAll({
       where:{ 'user_id': userId},
-      attributes: [
-                    "id","title","content", "created_at", "overall",
-                    [literal(`(SELECT COUNT(*) FROM user_review_like join reviews ON user_review_like.review_id = reviews.id)`), 'like_count'],
-                    [literal(`(SELECT COUNT(*) FROM user_review_dislike join reviews ON user_review_dislike.review_id = reviews.id)`), 'dislike_count'],
-                  ],
       include: [
         {
           model: Perfume,
@@ -202,6 +192,13 @@ router.post("/like", async (req, res) => {
       user_id: userId,
     });
 
+    await Review.increment({
+      liked: 1
+    }, {
+      where: { id: reviewId }
+    });
+    
+
     res.status(201).send();
 
   } catch (error) {
@@ -231,6 +228,12 @@ router.post("/dislike", async (req, res) => {
     await UserReviewDislike.create({
       review_id: reviewId,
       user_id: userId,
+    });
+
+    await Review.increment({
+      disliked: 1
+    }, {
+      where: { id: reviewId }
     });
 
     res.status(201).send();

@@ -78,7 +78,7 @@ const ReviewDetail = ({ id, review, sortby, reviewList, reviewSize, userInfo }) 
 					style={{ cursor: "pointer", marginRight: "1rem" }}
 					onClick={() => likeHandler(review.id)}
 				>
-					{review.like_count}
+					{review.liked}
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="16"
@@ -94,7 +94,7 @@ const ReviewDetail = ({ id, review, sortby, reviewList, reviewSize, userInfo }) 
 					style={{ cursor: "pointer" }}
 					onClick={() => dislikeHandler(review.id)}
 				>
-					{review.dislike_count}
+					{review.disliked}
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="16"
@@ -108,7 +108,7 @@ const ReviewDetail = ({ id, review, sortby, reviewList, reviewSize, userInfo }) 
 				</span>
 				<span style={{ float: "right", fontSize: "0.8rem" }}>
 					by <b>{review.User.nickname}</b><br />
-					{review.created_at.slice(0, 19).replace("T", " ")}
+					{review.createdAt.slice(0, 19).replace("T", " ")}
 				</span>
 			</Card.Body>
 		</Card>

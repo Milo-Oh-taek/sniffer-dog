@@ -27,15 +27,4 @@ module.exports = class userReviewDislike extends Model {
       }
     );
   }
-  static associate(db) {
-    // db.UserReviewDislike.belongsToMany(db.User, {
-    //   through: "user_review_dislike", foreignKey: 'user_id'
-    // });
-    // db.UserReviewDislike.belongsToMany(db.Review, {
-    //   through: "user_review_dislike", foreignKey: 'review_id'
-    // });
-    // db.UserReviewDislike.belongsToMany(db.User, {through: 'user_review'});
-    // db.UserReviewLike.belongsTo(db.User);
-    // db.UserReviewLike.belongsTo(db.Review);
-  }
 };

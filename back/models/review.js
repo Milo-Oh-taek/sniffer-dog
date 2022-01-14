@@ -29,16 +29,16 @@ module.exports = class Review extends Model {
           type: DataTypes.STRING(3),
           allowNull: false,
         },
-        // liked: {
-        //   type: DataTypes.INTEGER,
-        //   allowNull: true,
-        //   defaultValue: 0
-        // },
-        // disliked: {
-        //   type: DataTypes.INTEGER,
-        //   allowNull: true,
-        //   defaultValue: 0
-        // },
+        liked: {
+          type: DataTypes.INTEGER,
+          allowNull: true,
+          defaultValue: 0
+        },
+        disliked: {
+          type: DataTypes.INTEGER,
+          allowNull: true,
+          defaultValue: 0
+        },
         title: {
           type: DataTypes.STRING(50),
           allowNull: false,
@@ -75,19 +75,7 @@ module.exports = class Review extends Model {
   static associate(db) {
       db.Review.belongsTo(db.Perfume);
       db.Review.belongsTo(db.User);
-      // db.Review.belongsToMany(db.User, {through: 'user_review'});
-      // db.Review.belongsToMany(db.User, {through: 'user_review'});
       db.Review.belongsToMany(db.User, {through: 'user_review_like', foreignKey: 'review_id'});
       db.Review.belongsToMany(db.User, {through: 'user_review_dislike', foreignKey: 'review_id'});
-      // db.Review.hasMany(db.UserReviewLike, { foreignKey: 'review_id' });
-      // db.Review.hasMany(db.UserReviewDislike, { foreignKey: 'review_id' });
-      // db.Review.hasMany(db.UserReview);
-      // db.Review.hasMany(db.UserReviewLike);
-      // db.Review.hasMany(db.UserReviewDislike);
-
-      // db.Review.belongsToMany(db.User, {through: 'user_review'});
-      // db.Review.belongsToMany(db.User, {through: 'user_review_like'});
-      // db.Review.belongsToMany(db.User, {through: 'user_review_dislike'});
-      
   }
 };

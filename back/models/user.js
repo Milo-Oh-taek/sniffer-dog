@@ -42,7 +42,5 @@ module.exports = class User extends Model {
     db.User.belongsToMany(db.Perfume, {through: 'user_perfume'});
     db.User.belongsToMany(db.Review, {through: 'user_review_like', foreignKey: 'user_id'});
     db.User.belongsToMany(db.Review, {through: 'user_review_dislike', foreignKey: 'user_id'});
-
-
   }
 };
