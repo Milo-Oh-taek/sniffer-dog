@@ -60,7 +60,7 @@ export const getReviewStats = createAsyncThunk(
 						avg: Math.round(avgInfo.valueAVG) *10,
 					},
 				],
-				overall: Math.round(avgInfo.overallAVG),
+				overall: avgInfo.overallAVG? avgInfo.overallAVG.toFixed(1):0,
 				cntInfo,
 			};
 			return statistics;
