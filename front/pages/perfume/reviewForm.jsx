@@ -48,7 +48,7 @@ const ReviewForm = () => {
 
 	useEffect(() => {
 		if(postFulfilled){
-			router.push(`/perfume/${id}`);
+			router.replace(`/perfume/${id}`);
 		}
 	},[postFulfilled])
 
