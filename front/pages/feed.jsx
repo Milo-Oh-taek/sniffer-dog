@@ -12,6 +12,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import PostCard from "../components/post/PostCard";
 
+
 const Feed = () => {
 	const dispatch = useDispatch();
 	const content = useRef();
@@ -46,7 +47,7 @@ const Feed = () => {
 			className="d-flex flex-column align-items-center"
 			onSubmit={submitHandler}
 		>
-			<Form className="mb-3" style={{ width: "60%" }}>
+			<Form className="mb-3" style={{ width: "80%" }}>
 				<Form.Group>
 					{/* <Form.Label>share your story</Form.Label> */}
 					<Form.Control
@@ -75,12 +76,12 @@ const Feed = () => {
 			<div style={{ justifyContent: "center" }}>
 				{hasMorePosts && (
 					<Button variant="dark" onClick={loadMoreHandler}>
-						sniff More
+						Sniff More
 					</Button>
 				)}
 				{!hasMorePosts && (
 					<Button variant="dark" onClick={loadMoreHandler} disabled>
-						sniff More
+						Sniff More
 					</Button>
 				)}
 			</div>

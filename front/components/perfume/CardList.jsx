@@ -51,9 +51,9 @@ const CardList = ({perfumeList,perfumeListLoading,perfumeCount}) => {
 					<div style={{ width: "100%" }}>
 						{keyword && <h2>Search Lists of &apos;{keyword}&apos; </h2>}
 						
-						<h4>({perfumeCount})</h4>
+						{perfumeCount? <h4>({perfumeCount})</h4> : null}
 						{!perfumeCount && (
-							<h3 style={{marginTop:'40%'}}>- No Results -</h3>
+							<h3 style={{padding:'15%'}}>- No Results -</h3>
 						)}
 					</div>
 					
@@ -62,7 +62,7 @@ const CardList = ({perfumeList,perfumeListLoading,perfumeCount}) => {
 						<Col key={item.id}>
 							<Card
 								border="light"
-								style={{ width: "12rem", height: "18rem", cursor: "pointer" }}
+								style={{ width: "10em", height: "18rem", cursor: "pointer" }}
 								onClick={() => {
 									goDetail(item.id);
 								}}

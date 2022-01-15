@@ -74,7 +74,7 @@ const Mypage = () => {
 	};
 
 	return (
-		<>
+		<div style={{height:'100%'}}>
 			<Nav fill variant="tabs" defaultActiveKey="basic">
 				<Nav.Item>
 					<Nav.Link
@@ -117,11 +117,14 @@ const Mypage = () => {
 					</Nav.Link>
 				</Nav.Item>
 			</Nav>
-			<div className="d-flex flex-wrap justify-content-center">
+			<div className="d-flex justify-content-center flex-column align-items-center" style={{padding:'10%'}}>
 				{navState === "basic" && (
 					<>
+						<div>
+							<h2><b>My Info</b></h2>
+						</div>
 						<Form
-							style={{ width: "80%", marginTop: "3rem" }}
+							style={{ width: "80%", minHeight:'100%', margin: "5rem 0 5rem 0" }}
 							onSubmit={onNicknameHandler}
 						>
 							<Form.Group className="mb-3" controlId="formBasicEmail">
@@ -156,7 +159,7 @@ const Mypage = () => {
 					<>
 						{userPostList &&
 							userPostList.map((post) => (
-								<PostCard key={post.id} post={post} />
+								<PostCard key={post.id} post={post}/>
 							))}
 					</>
 				)}
@@ -180,7 +183,7 @@ const Mypage = () => {
 					</>
 				)}
 			</div>
-		</>
+		</div>
 	);
 };
 

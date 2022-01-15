@@ -89,12 +89,12 @@ const ReviewCard = () => {
 			<div style={{ textAlign: "center" }}>
 				{hasMoreReviews && (
 					<Button variant="dark" onClick={loadMoreHandler}>
-						sniff More
+						Sniff More
 					</Button>
 				)}
 				{!hasMoreReviews && (
 					<Button variant="dark" onClick={loadMoreHandler} disabled>
-						sniff More
+						Sniff More
 					</Button>
 				)}
 			</div>

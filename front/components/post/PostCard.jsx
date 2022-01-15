@@ -38,7 +38,7 @@ const PostCard = ({ post }) => {
 	}
 
 	return (
-		<Card style={{ width: "60%", margin: "1rem 0" }} key={post.id}>
+		<Card style={{ width: "80%", margin: "1rem 0" }} key={post.id}>
 			<Card.Header>
 				{post.User.nickname}
 				<span style={{ float: "right", fontSize: "0.5rem" }}>

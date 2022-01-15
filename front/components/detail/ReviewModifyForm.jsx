@@ -28,7 +28,7 @@ const ReviewModifyForm = ({ review }) => {
     }
 
 	return (
-		<Form key={review.id} style={{ margin: "3rem 1rem 0 0" }} onSubmit={submitHandler}>
+		<Form key={review.id} style={{ margin: "3rem 1rem 0 0", width:'100%' }} onSubmit={submitHandler}>
 			<Row className="mb-3">
 				<Image
 					fluid

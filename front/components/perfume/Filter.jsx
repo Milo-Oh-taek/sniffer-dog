@@ -113,7 +113,7 @@ const Filter = () => {
 										checked={
 											bndStates.indexOf(item.id + "") === -1 ? false : true
 										}
-										label={item.name + "(" + ")"}
+										label={item.name}
 										onChange={() => {
 											bndCheckboxHandler(item.id);
 										}}
