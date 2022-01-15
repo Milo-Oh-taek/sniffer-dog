@@ -114,7 +114,7 @@ const MainContainer = () => {
 							IONONE.
 						</p>
 						<div style={{ float: "right" }}>
-							<Link href="/">
+							<Link href="/perfume/7">
 								<a className="nav-link active" aria-current="page">
 										Go
 										<br />
