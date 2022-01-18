@@ -38,7 +38,7 @@ const PostCard = ({ post }) => {
 	}
 
 	return (
-		<Card style={{ width: "80%", margin: "1rem 0" }} key={post.id}>
+		<Card className="w-75" style={{ margin: "1rem 0" }} key={post.id}>
 			<Card.Header>
 				{post.User.nickname}
 				<span style={{ float: "right", fontSize: "0.5rem" }}>
@@ -104,7 +104,7 @@ const PostCard = ({ post }) => {
 							</ListGroup.Item>
 						))}
 					</ListGroup>
-					<Form className="visuallyHidden" style={{ width: "100%" }}>
+					<Form className="visuallyHidden w-100">
 						<Form.Group>
 							<Form.Control
 								as="textarea"

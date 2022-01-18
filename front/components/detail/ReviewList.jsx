@@ -18,25 +18,23 @@ const Progress = styles.progress`
 `;
 
 const ReviewList = () => {
-
 	const statistics = useSelector((state) => state.review.statistics);
 	const reviewTotalCnt = useSelector((state) => state.review.totalCount);
 
 	return (
 		<>
-			<div style={{ textAlign: "center", margin: "2rem" }} id="reviewArea">
+			<div className="text-center" style={{ margin: "2rem" }} id="reviewArea">
 				<h1>Customer Reviews</h1>
 			</div>
 			<div
+				className="d-flex justify-content-center"
 				style={{
-					display: "flex",
-					justifyContent: "center",
 					marginBottom: "1rem",
 				}}
 			>
-				<CardGroup style={{ width: "50%" }}>
-					<Card style={{ textAlign: "center", border: "none" }}>
-						<Card.Body style={{ textAlign: "center" }}>
+				<CardGroup className="w-50">
+					<Card className="text-center" style={{ border: "none" }}>
+						<Card.Body>
 							<Card.Title>
 								<h1>{statistics.overall}</h1>
 							</Card.Title>
@@ -50,8 +48,8 @@ const ReviewList = () => {
 							</Card.Text>
 						</Card.Body>
 					</Card>
-					<Card style={{ textAlign: "center", border: "none" }}>
-						<Card.Body style={{ textAlign: "center" }}>
+					<Card className="text-center" style={{ border: "none" }}>
+						<Card.Body>
 							<Card.Text>
 								<div>
 									5 stars{" "}

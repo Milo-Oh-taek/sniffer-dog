@@ -35,13 +35,13 @@ const LogoNav = () => {
 
 	return (
 		<Navbar expand="sm" bg="dark" variant="dark">
-			<Container style={{ justifyContent: "start" }}>
+			<Container className="justify-content-start">
 				{/* <Navbar.Brand style={{ fontSize: "1rem" }}>admin</Navbar.Brand> */}
 			</Container>
-			<Container style={{ justifyContent: "center" }}>
+			<Container className="justify-content-center">
 				<Navbar.Brand style={{ fontSize: "3rem" }}>SNIFFER DOG</Navbar.Brand>
 			</Container>
-			<Container style={{ justifyContent: "end" }}>
+			<Container className="justify-content-end">
 				<Navbar.Brand>
 					{userInfo && userInfo.id ? (
 						<SpanStyle onClick={logoutHandler}>Logout</SpanStyle>

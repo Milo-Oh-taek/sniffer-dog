@@ -41,16 +41,9 @@ const PerfumeInfo = () => {
 	};
 
 	return (
-		<Container
-			fluid
-			style={{
-				display: "flex",
-				justifyContent: "center",
-				alignItems: "center",
-			}}
-		>
+		<Container fluid>
 			<Row>
-				<Col sm={5} style={{ textAlign: "center" }}>
+				<Col sm={5} className="text-center">
 					<Image
 						style={{ marginTop: "3rem", width: "70%" }}
 						src={perfumeInfo.pic1}
@@ -121,7 +114,7 @@ const PerfumeInfo = () => {
 							</Card.Link>
 						</Card.Body>
 					</Card>
-					<Card style={{ textAlign: "center" }}>
+					<Card className="text-center">
 						<Card.Header>Notes</Card.Header>
 						<ListGroup variant="flush">
 							{perfumeInfo.topNote && (

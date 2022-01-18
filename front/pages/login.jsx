@@ -63,7 +63,7 @@ const Login = () => {
 	return (
 		<ContainDiv>
 			<FormCss onSubmit={submitHandler}>
-				<h2 style={{ textAlign: "center", marginBottom: "3rem" }}>SIGN IN</h2>
+				<h2 className="text-center" style={{ marginBottom: "3rem" }}>SIGN IN</h2>
 				<Form.Group className="mb-3" controlId="formGroupEmail">
 					<Form.Label>Email address</Form.Label>
 					<Form.Control
@@ -82,12 +82,12 @@ const Login = () => {
 						onChange={resetMsg}
 					/>
 				</Form.Group>
-				<div style={{color:"red", textAlign:"center"}}>
+				<div className="text-center" style={{color:"red"}}>
 					<span>{errorMessage}</span>
 				</div>
 				
-				<div style={{ textAlign: "center" }}>
-					<Button variant="primary" type="submit" style={{ width: "100%" }}>
+				<div className="text-center">
+					<Button variant="primary" type="submit" className="w-100">
 						Log In
 					</Button>
 					<br />

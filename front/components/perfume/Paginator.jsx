@@ -16,7 +16,6 @@ const Paginator = () => {
     if(page != pageState) setPageState(page);
 
     const pageHandler = (page) => {
-        console.log('Paginator.pageHandler');
         setPageState(page);
         query.page = page;
         router.push({
@@ -26,7 +25,7 @@ const Paginator = () => {
 	};
 
     return (
-        <div style={{ display: "flex", width: "100%", justifyContent: "center" }}>
+        <div className="w-100 d-flex justify-content-center">
             <Pagination
                 activePage={Number(page)}
                 itemsCountPerPage={12}

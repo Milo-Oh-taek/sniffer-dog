@@ -86,7 +86,7 @@ const ReviewCard = () => {
 				/>
 			))}
 
-			<div style={{ textAlign: "center" }}>
+			<div className="text-center">
 				{hasMoreReviews && (
 					<Button variant="dark" onClick={loadMoreHandler}>
 						Sniff More

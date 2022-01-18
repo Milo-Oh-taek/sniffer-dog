@@ -60,7 +60,7 @@ const ReviewDetail = ({ id, review, sortby, reviewList, reviewSize, userInfo }) 
 			}}
 			key={review.id}
 		>
-			<Card.Body style={{ textAlign: "justify" }}>
+			<Card.Body>
 				<Card.Title>
 					{review.title}
 					{review.UserNickname}

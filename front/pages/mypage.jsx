@@ -74,7 +74,7 @@ const Mypage = () => {
 	};
 
 	return (
-		<div style={{height:'100%'}}>
+		<div className="h-100">
 			<Nav fill variant="tabs" defaultActiveKey="basic">
 				<Nav.Item>
 					<Nav.Link
@@ -149,7 +149,7 @@ const Mypage = () => {
 									}}
 								/>
 							</Form.Group>
-							<Button variant="primary" type="submit" style={{ width: "100%" }}>
+							<Button variant="primary" className="w-100" type="submit">
 								Submit
 							</Button>
 						</Form>

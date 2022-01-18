@@ -49,7 +49,6 @@ const Signup = () => {
 	}, [userInfo]);
 
 	useEffect(() => {
-		console.log("userEFFFFFFFFFFFFECT");
 		if (signupDone) {
 			alert("registered! please log in");
 			dispatch(resetSignupDone());
@@ -94,7 +93,7 @@ const Signup = () => {
 	return (
 		<ContainDiv>
 			<FormCss onSubmit={submitHandler}>
-				<h2 style={{ textAlign: "center", marginBottom: "3rem" }}>SIGN UP</h2>
+				<h2 className="text-center" style={{ marginBottom: "3rem" }}>SIGN UP</h2>
 				<Form.Group className="mb-3" controlId="formGroupEmail">
 					<Form.Label>Email address</Form.Label>
 					<Form.Control
@@ -149,16 +148,13 @@ const Signup = () => {
 						</div>
 					) : null}
 				</Form.Group>
-				<div style={{ color: "red", textAlign: "center" }}>
-					<span>{}</span>
-				</div>
 
-				<div style={{ textAlign: "center" }}>
+				<div className="text-center">
 					<Button
 						variant="primary"
 						type="submit"
 						disabled={!verify}
-						style={{ width: "100%" }}
+						className="w-100"
 					>
 						{signupLoading ? (
 							<Spinner
@@ -172,7 +168,7 @@ const Signup = () => {
 							"Sign Up"
 						)}
 					</Button>
-					<div style={{ color: "red", textAlign: "center" }}>
+					<div className="text-center" style={{ color: "red"}}>
 						<span>{errorMessage}</span>
 					</div>
 					<br />
